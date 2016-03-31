@@ -1,6 +1,7 @@
 ﻿using System;
 
 using UIKit;
+using Foundation;
 
 namespace TryRC_iOS
 {
@@ -16,6 +17,13 @@ namespace TryRC_iOS
 			// Perform any additional setup after loading the view, typically from a nib.
 
 			serverPickerView.Model = new ServerPickerViewModel ();
+			appKeyTextField.Text = NSUserDefaults.StandardUserDefaults.StringForKey ("appKey") ?? "";
+			appSecretTextField.Text = NSUserDefaults.StandardUserDefaults.StringForKey ("appSecret") ?? "";
+			serverPickerView.Select (NSUserDefaults.StandardUserDefaults.IntForKey ("server"), 0, false);
+			usernameTextField.Text = NSUserDefaults.StandardUserDefaults.StringForKey ("username") ?? "";
+			passwordTextField.Text = NSUserDefaults.StandardUserDefaults.StringForKey ("password") ?? "";
+			sendToTextField.Text = NSUserDefaults.StandardUserDefaults.StringForKey ("sendTo") ?? "";
+			messageTextField.Text = NSUserDefaults.StandardUserDefaults.StringForKey ("message") ?? "";
 		}
 
 		public override void DidReceiveMemoryWarning ()
@@ -41,6 +49,17 @@ namespace TryRC_iOS
 				return (new string[2]{"Sandbox", "Production"})[row];
 			}
 		}
+
+		partial void SendSMS (Foundation.NSObject sender)
+		{
+			// save user input
+			NSUserDefaults.StandardUserDefaults.SetString (appKeyTextField.Text, "appKey");
+			NSUserDefaults.StandardUserDefaults.SetString (appSecretTextField.Text, "appSecret");
+			NSUserDefaults.StandardUserDefaults.SetInt(serverPickerView.SelectedRowInComponent(0), "server");
+			NSUserDefaults.StandardUserDefaults.SetString (usernameTextField.Text, "username");
+			NSUserDefaults.StandardUserDefaults.SetString (passwordTextField.Text, "password");
+			NSUserDefaults.StandardUserDefaults.SetString (sendToTextField.Text, "sendTo");
+			NSUserDefaults.StandardUserDefaults.SetString (messageTextField.Text, "message");
+		}
 	}
 }
-

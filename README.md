@@ -7,4 +7,4 @@ This app demostrates how to send sms with RingCentral C# SDK.
 
 ## todo
 
-1. Create UI
+1. Save User inputs
