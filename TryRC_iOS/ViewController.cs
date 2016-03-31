@@ -80,9 +80,6 @@ namespace TryRC_iOS
 					messageTextField.Text, usernameTextField.Text, sendToTextField.Text));
 			var response = platform.Post (request);
 			Console.WriteLine("Sms sent, status code is: " + response.GetStatus ());
-//			var alert = new NSAlert ();
-//			alert.MessageText = "Sms sent, status code is: " + response.GetStatus ();
-//			alert.RunModal ();
 		}
 	}
 }
