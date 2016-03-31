@@ -1,25 +1,107 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
-	<dependencies>
-		<plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204" />
-	</dependencies>
-	<scenes>
-		<!--View Controller-->
-		<scene sceneID="tne-QT-ifu">
-			<objects>
-				<viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
-					<layoutGuides>
-						<viewControllerLayoutGuide type="top" id="y3c-jy-aDJ" />
-						<viewControllerLayoutGuide type="bottom" id="wfy-db-euE" />
-					</layoutGuides>
-					<view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-						<rect key="frame" x="0.0" y="0.0" width="600" height="600" />
-						<autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" />
-						<color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite" />
-					</view>
-				</viewController>
-				<placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder" />
-			</objects>
-		</scene>
-	</scenes>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="App Key" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zge-44-ARX">
+                                <rect key="frame" x="52" y="52" width="496" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="App Secret" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Toq-wy-TOi">
+                                <rect key="frame" x="52" y="114" width="496" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sdQ-jI-o58">
+                                <rect key="frame" x="52" y="176" width="496" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="igm-rE-QbY"/>
+                                </constraints>
+                            </pickerView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="drm-UM-6T9">
+                                <rect key="frame" x="52" y="304" width="496" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wzO-az-03N">
+                                <rect key="frame" x="52" y="366" width="496" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Send to number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rtk-C9-dZ1">
+                                <rect key="frame" x="52" y="428" width="496" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qdf-vg-oJd">
+                                <rect key="frame" x="52" y="490" width="496" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ICN-fM-YdA">
+                                <rect key="frame" x="264.5" y="552" width="71" height="30"/>
+                                <state key="normal" title="Send SMS"/>
+                                <connections>
+                                    <action selector="SendSMS:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fzb-oA-T5P"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qdf-vg-oJd" firstAttribute="top" secondItem="Rtk-C9-dZ1" secondAttribute="bottom" constant="32" id="0Dr-eW-DDL"/>
+                            <constraint firstItem="drm-UM-6T9" firstAttribute="top" secondItem="sdQ-jI-o58" secondAttribute="bottom" constant="32" id="2aa-tS-23b"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Toq-wy-TOi" secondAttribute="trailing" constant="32" id="4NO-xQ-8KJ"/>
+                            <constraint firstItem="Rtk-C9-dZ1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="32" id="8qK-Ir-f2p"/>
+                            <constraint firstItem="sdQ-jI-o58" firstAttribute="top" secondItem="Toq-wy-TOi" secondAttribute="bottom" constant="32" id="Be0-Ea-G1b"/>
+                            <constraint firstItem="wzO-az-03N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="32" id="Cxf-RC-KQh"/>
+                            <constraint firstItem="ICN-fM-YdA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FHW-YF-IQg"/>
+                            <constraint firstItem="Toq-wy-TOi" firstAttribute="top" secondItem="Zge-44-ARX" secondAttribute="bottom" constant="32" id="IEF-Eq-Lhf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qdf-vg-oJd" secondAttribute="trailing" constant="32" id="JPt-su-80V"/>
+                            <constraint firstItem="sdQ-jI-o58" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="32" id="WBw-Kb-pdl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sdQ-jI-o58" secondAttribute="trailing" constant="32" id="XKa-0V-tMB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="drm-UM-6T9" secondAttribute="trailing" constant="32" id="bga-5W-iNM"/>
+                            <constraint firstItem="Zge-44-ARX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="32" id="cTK-pn-9PI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Zge-44-ARX" secondAttribute="trailing" constant="32" id="e0G-Ma-cyI"/>
+                            <constraint firstItem="drm-UM-6T9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="32" id="fSe-7h-fTD"/>
+                            <constraint firstItem="Toq-wy-TOi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="32" id="fwb-gf-QuR"/>
+                            <constraint firstItem="Rtk-C9-dZ1" firstAttribute="top" secondItem="wzO-az-03N" secondAttribute="bottom" constant="32" id="oBE-la-MXf"/>
+                            <constraint firstItem="ICN-fM-YdA" firstAttribute="top" secondItem="qdf-vg-oJd" secondAttribute="bottom" constant="32" id="pbC-Fo-fii"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Rtk-C9-dZ1" secondAttribute="trailing" constant="32" id="q1f-LT-DV6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wzO-az-03N" secondAttribute="trailing" constant="32" id="qqV-ov-I73"/>
+                            <constraint firstItem="wzO-az-03N" firstAttribute="top" secondItem="drm-UM-6T9" secondAttribute="bottom" constant="32" id="tEc-XF-7ii"/>
+                            <constraint firstItem="qdf-vg-oJd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="32" id="wE2-qf-hS0"/>
+                            <constraint firstItem="Zge-44-ARX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="32" id="wF9-Co-qjN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="appKeyTextField" destination="Zge-44-ARX" id="kEg-If-NCo"/>
+                        <outlet property="appSecretTextField" destination="Toq-wy-TOi" id="avB-RZ-6bS"/>
+                        <outlet property="messageTextField" destination="qdf-vg-oJd" id="Agq-fA-PJC"/>
+                        <outlet property="passwordTextField" destination="wzO-az-03N" id="3Fi-V8-T12"/>
+                        <outlet property="sendToTextField" destination="Rtk-C9-dZ1" id="oL7-Vp-8MZ"/>
+                        <outlet property="serverPickerView" destination="sdQ-jI-o58" id="eLC-DO-Yy3"/>
+                        <outlet property="usernameTextField" destination="drm-UM-6T9" id="O8w-F0-VXR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+    </scenes>
 </document>
