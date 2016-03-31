@@ -79,6 +79,9 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
+    <Reference Include="RingCentral">
+      <HintPath>..\..\..\src\csharp\ringcentral-csharp\RingCentral\bin\Debug\RingCentral.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />

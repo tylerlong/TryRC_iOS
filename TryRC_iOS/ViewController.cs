@@ -7,6 +7,8 @@ namespace TryRC_iOS
 {
 	public partial class ViewController : UIViewController
 	{
+		private RingCentral.Platform platform;
+
 		public ViewController (IntPtr handle) : base (handle)
 		{
 		}
@@ -60,6 +62,27 @@ namespace TryRC_iOS
 			NSUserDefaults.StandardUserDefaults.SetString (passwordTextField.Text, "password");
 			NSUserDefaults.StandardUserDefaults.SetString (sendToTextField.Text, "sendTo");
 			NSUserDefaults.StandardUserDefaults.SetString (messageTextField.Text, "message");
+
+			// send sms
+			if (platform == null) {
+				platform = new RingCentral.SDK (appKeyTextField.Text, appSecretTextField.Text,
+					serverPickerView.SelectedRowInComponent(0) == 0 ? "https://platform.devtest.ringcentral.com" : "https://platform.ringcentral.com"
+				).GetPlatform ();
+			}
+			if (!platform.LoggedIn ()) {
+				var tokens = usernameTextField.Text.Split ('-');
+				var username = tokens [0];
+				var extension = tokens.Length > 1 ? tokens [1] : null;
+				platform.Authorize (username, extension, passwordTextField.Text, true);
+			}
+			var request = new RingCentral.Http.Request ("/account/~/extension/~/sms",
+				string.Format ("{{ \"text\": \"{0}\", \"from\": {{ \"phoneNumber\": \"{1}\" }}, \"to\": [{{ \"phoneNumber\": \"{2}\" }}]}}",
+					messageTextField.Text, usernameTextField.Text, sendToTextField.Text));
+			var response = platform.Post (request);
+			Console.WriteLine("Sms sent, status code is: " + response.GetStatus ());
+//			var alert = new NSAlert ();
+//			alert.MessageText = "Sms sent, status code is: " + response.GetStatus ();
+//			alert.RunModal ();
 		}
 	}
 }
